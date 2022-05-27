@@ -1,0 +1,27 @@
+
+diff --git a/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandler.vcxproj b/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandler.vcxproj
+index 202fece..8b814fc 100644
+--- a/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandler.vcxproj
++++ b/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandler.vcxproj
+@@ -18,7 +18,7 @@
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Label="ReactNativeWindowsProps">
+-    <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
++    <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(SolutionDir), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
+   </PropertyGroup>
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|ARM">
+diff --git a/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandlerModule.cpp b/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandlerModule.cpp
+index be2263e..609328b 100644
+--- a/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandlerModule.cpp
++++ b/node_modules/react-native-gesture-handler/windows/RNGestureHandler/RNGestureHandler/RNGestureHandlerModule.cpp
+@@ -73,7 +73,7 @@ void RNGestureHandlerModule::CreateGestureHandler(std::string handlerName, int h
+         return;
+     }
+ 
+-    handler->kind = handlerKind;
++    // handler->kind = handlerKind;
+     handler->reactContext = reactContext;
+     handler->lastState = RNGestureHandlerState::Undetermined;
+     handler->handlerTag = handlerTag;
